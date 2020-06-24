@@ -10,7 +10,6 @@
 		F64EBAD624A39EC800CEF2D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64EBAD524A39EC800CEF2D7 /* AppDelegate.swift */; };
 		F64EBAD824A39EC800CEF2D7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64EBAD724A39EC800CEF2D7 /* SceneDelegate.swift */; };
 		F64EBADA24A39EC800CEF2D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64EBAD924A39EC800CEF2D7 /* ViewController.swift */; };
-		F64EBADD24A39EC800CEF2D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F64EBADB24A39EC800CEF2D7 /* Main.storyboard */; };
 		F64EBADF24A39ECD00CEF2D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F64EBADE24A39ECD00CEF2D7 /* Assets.xcassets */; };
 		F64EBAE224A39ECD00CEF2D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F64EBAE024A39ECD00CEF2D7 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -20,7 +19,6 @@
 		F64EBAD524A39EC800CEF2D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F64EBAD724A39EC800CEF2D7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F64EBAD924A39EC800CEF2D7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F64EBADC24A39EC800CEF2D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F64EBADE24A39ECD00CEF2D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F64EBAE124A39ECD00CEF2D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F64EBAE324A39ECD00CEF2D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,15 +54,30 @@
 		F64EBAD424A39EC800CEF2D7 /* eVents */ = {
 			isa = PBXGroup;
 			children = (
-				F64EBAD524A39EC800CEF2D7 /* AppDelegate.swift */,
-				F64EBAD724A39EC800CEF2D7 /* SceneDelegate.swift */,
-				F64EBAD924A39EC800CEF2D7 /* ViewController.swift */,
-				F64EBADB24A39EC800CEF2D7 /* Main.storyboard */,
+				F64EBAE924A3A03D00CEF2D7 /* Support */,
+				F64EBAEA24A3A05400CEF2D7 /* Scenes */,
 				F64EBADE24A39ECD00CEF2D7 /* Assets.xcassets */,
-				F64EBAE024A39ECD00CEF2D7 /* LaunchScreen.storyboard */,
 				F64EBAE324A39ECD00CEF2D7 /* Info.plist */,
 			);
 			path = eVents;
+			sourceTree = "<group>";
+		};
+		F64EBAE924A3A03D00CEF2D7 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				F64EBAE024A39ECD00CEF2D7 /* LaunchScreen.storyboard */,
+				F64EBAD524A39EC800CEF2D7 /* AppDelegate.swift */,
+				F64EBAD724A39EC800CEF2D7 /* SceneDelegate.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		F64EBAEA24A3A05400CEF2D7 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				F64EBAD924A39EC800CEF2D7 /* ViewController.swift */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +140,6 @@
 			files = (
 				F64EBAE224A39ECD00CEF2D7 /* LaunchScreen.storyboard in Resources */,
 				F64EBADF24A39ECD00CEF2D7 /* Assets.xcassets in Resources */,
-				F64EBADD24A39EC800CEF2D7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,14 +159,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F64EBADB24A39EC800CEF2D7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F64EBADC24A39EC800CEF2D7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F64EBAE024A39ECD00CEF2D7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -294,7 +298,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = KSJain.eVents;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -312,7 +316,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = KSJain.eVents;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
