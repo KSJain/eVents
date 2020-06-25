@@ -25,21 +25,27 @@ class EventViewModel: Hashable {
     var startTimeStamp: Int     = -1
     var endTimeStamp: Int       = -1
     
-    var eventDate: Int          = -1
+    var startDate: String       = ""
+    var startHour: String       = ""
+    var endHour: String         = ""
     var conflict: Bool          = false
+    var tag: String             = ""
     
     init(event: Event) {
-        self.title      =  event.title
-        self.startTime  = event.start
-        self.endTime    = event.end
+        self.title              = event.title
+        self.startTime          = event.start
+        self.endTime            = event.end
         
-        if let startDate = startTime.convertToDate() {
-            self.startTimeStamp = startDate.unixTimestamp
-            self.eventDate = Int(startDate.convertToYearMonthDate()) ?? -2
+        if let start = startTime.convertToDate() {
+            self.startTimeStamp = start.unixTimestamp
+            self.startDate      = start.convertToDateAndDay()
+            self.startHour      = start.convertToHour()
+            self.tag            = start.convertToTag()
         }
         
         if let endDate = endTime.convertToDate() {
-            self.endTimeStamp = endDate.unixTimestamp
+            self.endTimeStamp   = endDate.unixTimestamp
+            self.endHour        = endDate.convertToHour()
         }
         
     }
@@ -47,10 +53,7 @@ class EventViewModel: Hashable {
 
 extension EventViewModel: CustomDebugStringConvertible {
     var debugDescription: String {
-        let top     = "////////////////////////"
-        let bottom  = "########################"
-        
-        return top + "\nTitle: \(title)\nStart: \(startTime)\nEnd  : \(endTime)\nStartTimeStamp: \(startTimeStamp)\nEndTimeStamp : \(endTimeStamp)\nEvent Date: \(eventDate)\nConflict: \(conflict)\n" + bottom
+        return  "Title: \(title)\nEvent Date: \(startDate)\nStart: \(startHour)\nEnd  : \(endHour)\nConflict: \(conflict)\nTag: \(tag)\n"
     }
 }
 

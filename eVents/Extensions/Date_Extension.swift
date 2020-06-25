@@ -18,4 +18,22 @@ extension Date {
         dateFormatter.dateFormat    = "yyyyMMdd"
         return dateFormatter.string(from: self)
     }
+    
+    func convertToDateAndDay() -> String {
+        let dateFormatter           = DateFormatter()
+        dateFormatter.dateFormat    = "E, d MMM YYYY"
+        return dateFormatter.string(from: self)
+    }
+    
+    func convertToHour() -> String {
+        let dateFormatter           = DateFormatter()
+        dateFormatter.dateFormat    = "h:mm a"
+        return dateFormatter.string(from: self)
+    }
+    
+    func convertToTag() -> String {
+        let dateFormatter           = DateFormatter()
+        dateFormatter.dateFormat    = "yyMMdd"
+        return dateFormatter.string(from: self)
+    }
 }
