@@ -36,4 +36,10 @@ extension Date {
         dateFormatter.dateFormat    = "yyMMdd"
         return dateFormatter.string(from: self)
     }
+    
+    func convertToIconName() -> String {
+        let dateFormatter           = DateFormatter()
+        dateFormatter.dateFormat    = "h"
+        return dateFormatter.string(from: self)
+    }
 }

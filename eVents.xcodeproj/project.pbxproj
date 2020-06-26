@@ -26,6 +26,10 @@
 		F64EBB1724A4354F00CEF2D7 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64EBAF024A3A49C00CEF2D7 /* Event.swift */; };
 		F64EBB1824A4391D00CEF2D7 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64EBAFC24A3BD4F00CEF2D7 /* String+Extension.swift */; };
 		F64EBB1924A4392000CEF2D7 /* Date_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64EBB0124A3F11100CEF2D7 /* Date_Extension.swift */; };
+		F64EBB1C24A5394100CEF2D7 /* EVAlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64EBB1B24A5394100CEF2D7 /* EVAlbumCell.swift */; };
+		F64EBB1F24A53A1500CEF2D7 /* EVTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64EBB1E24A53A1500CEF2D7 /* EVTitleLabel.swift */; };
+		F64EBB2224A53A3C00CEF2D7 /* EVSecondaryTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64EBB2124A53A3C00CEF2D7 /* EVSecondaryTitleLabel.swift */; };
+		F64EBB2424A545F500CEF2D7 /* EVIconImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64EBB2324A545F500CEF2D7 /* EVIconImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F64EBAD224A39EC800CEF2D7 /* eVents.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eVents.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F64EBAD224A39EC800CEF2D7 /* Upcoming Events.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Upcoming Events.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F64EBAD524A39EC800CEF2D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F64EBAD724A39EC800CEF2D7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F64EBADE24A39ECD00CEF2D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,6 +61,10 @@
 		F64EBB0924A4343700CEF2D7 /* eVentsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = eVentsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F64EBB0D24A4343700CEF2D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F64EBB1424A434C800CEF2D7 /* ConflictManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConflictManagerTest.swift; sourceTree = "<group>"; };
+		F64EBB1B24A5394100CEF2D7 /* EVAlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EVAlbumCell.swift; sourceTree = "<group>"; };
+		F64EBB1E24A53A1500CEF2D7 /* EVTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EVTitleLabel.swift; sourceTree = "<group>"; };
+		F64EBB2124A53A3C00CEF2D7 /* EVSecondaryTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EVSecondaryTitleLabel.swift; sourceTree = "<group>"; };
+		F64EBB2324A545F500CEF2D7 /* EVIconImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EVIconImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +97,7 @@
 		F64EBAD324A39EC800CEF2D7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F64EBAD224A39EC800CEF2D7 /* eVents.app */,
+				F64EBAD224A39EC800CEF2D7 /* Upcoming Events.app */,
 				F64EBB0924A4343700CEF2D7 /* eVentsTests.xctest */,
 			);
 			name = Products;
@@ -98,6 +106,7 @@
 		F64EBAD424A39EC800CEF2D7 /* eVents */ = {
 			isa = PBXGroup;
 			children = (
+				F64EBB1A24A5366900CEF2D7 /* Custom Views */,
 				F64EBAFE24A3C5A100CEF2D7 /* ViewModel */,
 				F64EBAFB24A3BD4200CEF2D7 /* Extensions */,
 				F64EBAF224A3A52700CEF2D7 /* Utilities */,
@@ -189,6 +198,41 @@
 			path = eVentsTests;
 			sourceTree = "<group>";
 		};
+		F64EBB1A24A5366900CEF2D7 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				F64EBB1D24A539F400CEF2D7 /* Cell */,
+				F64EBB2024A53A2000CEF2D7 /* Label */,
+				F64EBB2524A545FC00CEF2D7 /* Image */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		F64EBB1D24A539F400CEF2D7 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F64EBB1B24A5394100CEF2D7 /* EVAlbumCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		F64EBB2024A53A2000CEF2D7 /* Label */ = {
+			isa = PBXGroup;
+			children = (
+				F64EBB1E24A53A1500CEF2D7 /* EVTitleLabel.swift */,
+				F64EBB2124A53A3C00CEF2D7 /* EVSecondaryTitleLabel.swift */,
+			);
+			path = Label;
+			sourceTree = "<group>";
+		};
+		F64EBB2524A545FC00CEF2D7 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				F64EBB2324A545F500CEF2D7 /* EVIconImageView.swift */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -206,7 +250,7 @@
 			);
 			name = eVents;
 			productName = eVents;
-			productReference = F64EBAD224A39EC800CEF2D7 /* eVents.app */;
+			productReference = F64EBAD224A39EC800CEF2D7 /* Upcoming Events.app */;
 			productType = "com.apple.product-type.application";
 		};
 		F64EBB0824A4343700CEF2D7 /* eVentsTests */ = {
@@ -293,12 +337,16 @@
 				F64EBB0224A3F11100CEF2D7 /* Date_Extension.swift in Sources */,
 				F64EBAF424A3A55400CEF2D7 /* EVDataError.swift in Sources */,
 				F64EBAFD24A3BD4F00CEF2D7 /* String+Extension.swift in Sources */,
+				F64EBB1C24A5394100CEF2D7 /* EVAlbumCell.swift in Sources */,
 				F64EBAF124A3A49C00CEF2D7 /* Event.swift in Sources */,
 				F64EBAD624A39EC800CEF2D7 /* AppDelegate.swift in Sources */,
 				F64EBAEF24A3A30500CEF2D7 /* MockDataManager.swift in Sources */,
+				F64EBB2224A53A3C00CEF2D7 /* EVSecondaryTitleLabel.swift in Sources */,
 				F64EBB0024A3C5B400CEF2D7 /* EventViewModel.swift in Sources */,
 				F64EBB0424A42DF900CEF2D7 /* ConflictManager.swift in Sources */,
 				F64EBAD824A39EC800CEF2D7 /* SceneDelegate.swift in Sources */,
+				F64EBB1F24A53A1500CEF2D7 /* EVTitleLabel.swift in Sources */,
+				F64EBB2424A545F500CEF2D7 /* EVIconImageView.swift in Sources */,
 				F64EBAF824A3A92800CEF2D7 /* UpcomingEventsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -464,7 +512,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = KSJain.eVents;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Upcoming Events";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -482,7 +530,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = KSJain.eVents;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Upcoming Events";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

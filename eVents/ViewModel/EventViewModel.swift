@@ -25,11 +25,13 @@ class EventViewModel: Hashable {
     var startTimeStamp: Int     = -1
     var endTimeStamp: Int       = -1
     
+    var tag: String             = ""
     var startDate: String       = ""
+    
     var startHour: String       = ""
     var endHour: String         = ""
     var conflict: Bool          = false
-    var tag: String             = ""
+    var iconName: String        = "0"
     
     init(event: Event) {
         self.title              = event.title
@@ -41,6 +43,7 @@ class EventViewModel: Hashable {
             self.startDate      = start.convertToDateAndDay()
             self.startHour      = start.convertToHour()
             self.tag            = start.convertToTag()
+            self.iconName       = start.convertToIconName()
         }
         
         if let endDate = endTime.convertToDate() {

@@ -52,6 +52,7 @@ class UpcomingEventsVC: UIViewController {
     
     private func configureView(){
         view.backgroundColor = .systemBlue
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
 }
@@ -67,7 +68,7 @@ extension UpcomingEventsVC: UITableViewDelegate {
         tableView.frame                 = view.bounds
         tableView.rowHeight             = view.bounds.height / 6.8
             
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(EVAlbumCell.self, forCellReuseIdentifier: EVAlbumCell.reuseID)
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -77,7 +78,7 @@ extension UpcomingEventsVC: UITableViewDelegate {
         let label               = UILabel()
         label.font              = UIFont.systemFont(ofSize: 17, weight: .semibold)
         label.backgroundColor   = .systemGray5
-        label.text              = sectionTitle
+        label.text              = "   " + sectionTitle
         
         return label
     }
@@ -89,8 +90,9 @@ extension UpcomingEventsVC {
     private func configureDatasource() {
         diffableDataSource       = EventDataSource(tableView: tableView,
                                             cellProvider: { (tableView, indexPath, event) -> UITableViewCell? in
-                                                let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-                                                cell.textLabel?.text = event.title + (event.conflict ? " Conflicts" : " No Conflict")
+                                                let cell = tableView.dequeueReusableCell(withIdentifier: EVAlbumCell.reuseID,
+                                                                                         for: indexPath) as? EVAlbumCell
+                                                cell?.setCell(with: event)
                                                 return cell
         })
     }

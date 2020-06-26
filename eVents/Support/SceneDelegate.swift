@@ -19,8 +19,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = UpcomingEventsVC()
+        window?.rootViewController = createEventsListNC()
         window?.makeKeyAndVisible()
+    }
+    
+    func createEventsListNC() -> UINavigationController {
+        let eventsListVC            = UpcomingEventsVC()
+        eventsListVC.title          = "Upcoming Events"
+        
+        return UINavigationController(rootViewController: eventsListVC)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

@@ -46,8 +46,4 @@ class MockDataManager {
             completion(.failure(.decodeError))
         }
     }
-    
-    public func sortEventsForSections(events: [EventViewModel]) {
-        
-    }
 }
