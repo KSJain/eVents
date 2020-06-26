@@ -552,7 +552,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/eVents.app/eVents";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Upcoming Events.app/Upcoming Events";
 			};
 			name = Debug;
 		};
@@ -572,7 +572,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/eVents.app/eVents";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Upcoming Events.app/Upcoming Events";
 			};
 			name = Release;
 		};

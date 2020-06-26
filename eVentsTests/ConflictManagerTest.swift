@@ -21,9 +21,17 @@ class ConflictManagerTest: XCTestCase {
                        start: "November 1, 2018 7:33 PM",
                        end: "November 1, 2018 11:00 PM")
     
+    var event4 = Event(title: "Evening Cookout with Friends",
+                       start: "November 1, 2018 5:00 PM",
+                       end: "November 1, 2018 10:00 PM")
+    
+    var event5 = Event(title: "Sleep",
+                       start: "November 1, 2018 11:00 PM",
+                       end: "November 1, 2018 11:59 PM")
+    
     var allEvents: [EventViewModel]?
     
-    func testConflictManager() throws {
+    func testConflictManager_NoConflicts() throws {
         allEvents = [
             EventViewModel(event: event1),
             EventViewModel(event: event2),
@@ -32,5 +40,22 @@ class ConflictManagerTest: XCTestCase {
         
         let conflictingEvents = ConflictManager.shared.findConflict(events: allEvents!)
         XCTAssertEqual(conflictingEvents, [])
+    }
+    
+    func testConflictManager_HasConflicts() throws {
+        allEvents = [
+            EventViewModel(event: event1),
+            EventViewModel(event: event2),
+            EventViewModel(event: event3),
+            EventViewModel(event: event4),
+            EventViewModel(event: event5)
+        ]
+        
+        let conflictingEvents = ConflictManager.shared.findConflict(events: allEvents!)
+        let expectedEvents = [
+            EventViewModel(event: event3),
+            EventViewModel(event: event4)
+        ]
+        XCTAssertEqual(conflictingEvents, expectedEvents)
     }
 }
